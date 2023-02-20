@@ -12,3 +12,4 @@ Assembly-CSharp.Player.csproj
 Library/
 Logs/
 UserSettings/
+obj/
