@@ -1,0 +1,14 @@
+AreaFinder.sln
+.vsconfig
+/
+Assembly-CSharp.csproj
+Assembly-CSharp.Player.csproj
+.vs/AreaFinder/FileContentIndex/23cf0053-aec8-47a1-8e0d-4cbc054d0f3b.vsidx
+.vs/AreaFinder/FileContentIndex/51f256ce-9b84-45c3-894a-5375a84deedd.vsidx
+.vs/AreaFinder/FileContentIndex/a56a4ddf-36de-4ed4-aa21-3523a8de73a6.vsidx
+.vs/AreaFinder/FileContentIndex/d9cc5ba6-ab88-4d99-90fa-98783c8a9cc2.vsidx
+.vs/AreaFinder/FileContentIndex/read.lock
+.vs/AreaFinder/v17/.suo
+Library/
+Logs/
+UserSettings/
