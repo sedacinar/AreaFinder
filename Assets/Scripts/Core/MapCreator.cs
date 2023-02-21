@@ -9,12 +9,6 @@ namespace SedaCinar.AreaFinder.Core
         #region Variables
         MapContent mapContent;
         #endregion
-        #region Unity Methods
-        void Start() 
-        {
-            mapContent = new MapContent();
-        }
-        #endregion
         #region Public Methods
         public void AddElement(ElementContent elementContent)
         {
@@ -27,6 +21,22 @@ namespace SedaCinar.AreaFinder.Core
                 mapContent = new MapContent();
             }
             mapContent.Elements.Add(elementContent);
+        }
+        public void SetContent(MapContent mapContent)
+        {
+            if(mapContent == null) 
+            {
+                return;
+            }
+            this.mapContent = mapContent;
+        }
+        public void GetContent(out MapContent mapContent)
+        {
+            mapContent = this.mapContent;
+        }
+        public void ResetContent()
+        {
+            mapContent = new MapContent();
         }
         #endregion
         #region Interface Methods

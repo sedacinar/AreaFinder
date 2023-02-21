@@ -1,14 +1,13 @@
 using System;
-using SedaCinar.AreaFinder.Core;
 using System.Collections.Generic;
 namespace SedaCinar.AreaFinder.Model
 {
     [Serializable]
     public class MapContent
     {
-        public int Width;
-        public int Height;
-        public List<ElementContent> Elements;
+        public int Width { get; set; }
+        public int Height { get; set; }
+        public List<ElementContent> Elements { get; set; }
    
         public MapContent() 
         {

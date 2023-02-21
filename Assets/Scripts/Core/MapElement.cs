@@ -1,6 +1,6 @@
-using SedaCinar.AreaFinder.Model;
 using UnityEngine;
 using UnityEngine.UI;
+using SedaCinar.AreaFinder.Model;
 
 namespace SedaCinar.AreaFinder.Core
 {
@@ -8,29 +8,45 @@ namespace SedaCinar.AreaFinder.Core
     {
         #region Fields
         Image image;
+        MouseInput mouseInput;
         ElementContent elementContent;
-        MapCreator mapCreator;
+        RectTransform rectTransform;
+        #endregion
+        #region Unity Methods
+        private void Update()
+        {
+            if(IsBorder() || !mouseInput.IsPressed)
+            {
+                return;
+            }
+           
+            if(RectTransformUtility.RectangleContainsScreenPoint(rectTransform, Input.mousePosition))
+            {
+                SetBorder();
+            }
+        }
         #endregion
         #region Public Methods
         public void Initialize()
         {
             image = GetComponent<Image>();
-            mapCreator = FindObjectOfType<MapCreator>();
+            rectTransform = GetComponent<RectTransform>();
+            mouseInput = FindObjectOfType<MouseInput>();
             elementContent = new ElementContent();
-            mapCreator.AddElement(elementContent);
         }
         public ElementContent GetContent()
         {
             return elementContent;
         }
-        public Vector2 GetLocation()
+        public void GetLocation(out int width, out int height)
         {
-            return new Vector2(elementContent.Row, elementContent.Column);
+            width = elementContent.Row;
+            height = elementContent.Column;
         }
-        public void SetLocation(int column, int row)
+        public void SetLocation(in int column, in int row)
         {
-            this.elementContent.Row = row;
             this.elementContent.Column = column;
+            this.elementContent.Row = row;
         }
         public void SetBorder()
         {
@@ -47,6 +63,7 @@ namespace SedaCinar.AreaFinder.Core
             return elementContent.IsBorder;
         }
         #endregion
+     
 
     }
 }

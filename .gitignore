@@ -13,3 +13,5 @@ Library/
 Logs/
 UserSettings/
 obj/
+.vs/
+Temp/

@@ -1,26 +1,27 @@
 using UnityEngine;
 using UnityEngine.UI;
-using SedaCinar.AreaFinder.Core;
+using SedaCinar.AreaFinder.IO;
+
 namespace SedaCinar.AreaFinder.UI
 {
-    public class GenerateButtton : MonoBehaviour
+    public class SaveButton : MonoBehaviour
     {
         #region Fields
         Button button;
-        MapArea mapArea;
+        IOManager ioManager;
         #endregion
         #region Unity Methods
         void Start()
         {
             button = GetComponent<Button>();
-            mapArea = FindObjectOfType<MapArea>();
+            ioManager = FindObjectOfType<IOManager>();
             button.onClick.AddListener(ButtonAction);
         }
         #endregion
         #region Private Methods
         void ButtonAction()
         {
-            mapArea.RedrawMap();
+            ioManager.Save();
         }
         #endregion
     }
